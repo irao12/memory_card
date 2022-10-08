@@ -1,0 +1,26 @@
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	width: 100%;
+	height: 14rem;
+	background-color: #e71717;
+	border-bottom: 0.5rem solid black;
+	color: white;
+	position: relative;
+}
+
+.title {
+	font-size: 6rem;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.scores {
+	position: absolute;
+	font-size: 2rem;
+	font-weight: 600;
+	right: 2rem;
+	top: 2rem;
+}
