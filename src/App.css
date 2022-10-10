@@ -10,3 +10,8 @@ html {
 	font-size: 62.5%;
 	font-family: "Montserrat", sans-serif;
 }
+
+main {
+	display: flex;
+	justify-content: center;
+}
