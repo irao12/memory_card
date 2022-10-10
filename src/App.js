@@ -4,7 +4,6 @@ import Board from "./components/board/Board";
 import "./App.css";
 
 function App() {
-	const NUM_OF_CARDS = 8;
 	const MIN_ID = 1;
 	const MAX_ID = 905;
 
@@ -12,11 +11,14 @@ function App() {
 	const [highScore, setHighScore] = React.useState(0);
 	const [cardList, setCardList] = React.useState([]);
 	const [isLoading, setIsLoading] = React.useState(false);
+	const [level, setLevel] = React.useState(1);
 
-	const getNewBoard = async (level) => {
+	const getNewBoard = async () => {
 		const newCardList = [];
+
 		setIsLoading(true);
-		for (let i = 0; i < NUM_OF_CARDS; i++) {
+		const numCards = level * 2 + 2;
+		for (let i = 0; i < numCards; i++) {
 			const id = Math.floor(Math.random() * MAX_ID) + MIN_ID;
 
 			const response = await fetch(
@@ -35,19 +37,22 @@ function App() {
 			newCardList.push(currPokemon);
 		}
 		setCardList(newCardList);
+
 		setIsLoading(false);
 	};
 
 	const shuffleBoard = () => {
-		const cardListCopy = [...cardList];
-		for (let i = 0; i < cardListCopy.length - 1; i++) {
-			const randomIndex =
-				Math.floor(Math.random() * (cardListCopy.length - i)) + i;
-			const temp = cardListCopy[i];
-			cardListCopy[i] = cardListCopy[randomIndex];
-			cardListCopy[randomIndex] = temp;
-		}
-		setCardList(cardListCopy);
+		setCardList((prevCards) => {
+			const cardListCopy = [...prevCards];
+			for (let i = 0; i < cardListCopy.length - 1; i++) {
+				const randomIndex =
+					Math.floor(Math.random() * (cardListCopy.length - i)) + i;
+				const temp = cardListCopy[i];
+				cardListCopy[i] = cardListCopy[randomIndex];
+				cardListCopy[randomIndex] = temp;
+			}
+			return cardListCopy;
+		});
 	};
 
 	React.useEffect(() => {
