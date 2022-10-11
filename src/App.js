@@ -10,7 +10,7 @@ function App() {
 
 	return (
 		<>
-			<Header score={score} highScore={highScore} />;
+			<Header score={score} highScore={highScore} />
 			<Board
 				level={level}
 				setLevel={setLevel}
