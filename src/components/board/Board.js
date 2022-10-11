@@ -50,9 +50,9 @@ export default function Board({
 	const getNewGame = async () => {
 		setScore(0);
 		setNumClicked(0);
+		setIsGameOver(false);
 		if (level === 1) await getNewBoard();
 		else setLevel(1);
-		setIsGameOver(false);
 	};
 
 	const getNewBoard = async () => {

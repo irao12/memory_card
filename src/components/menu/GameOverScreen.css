@@ -6,11 +6,11 @@
 }
 
 .game-over-screen > h2 {
-	font-size: 8rem;
+	font-size: 4rem;
 }
 
 .game-over-screen > p {
-	font-size: 5rem;
+	font-size: 3rem;
 }
 
 .game-over-screen > button {
