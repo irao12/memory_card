@@ -1,0 +1,27 @@
+.game-over-screen {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-over-screen > h2 {
+	font-size: 8rem;
+}
+
+.game-over-screen > p {
+	font-size: 5rem;
+}
+
+.game-over-screen > button {
+	margin-top: 5rem;
+	font-family: "Montserrat", sans-serif;
+	font-size: 2rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 1rem;
+	background-color: #e71717;
+	color: white;
+	padding: 1.6rem 2.5em;
+	cursor: pointer;
+}
